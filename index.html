@@ -1,0 +1,94 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>StudySync — Student Study Planner</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js" defer></script>
+<script src="script.js" defer></script>
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+
+    <div class="brand">
+      <img
+        src="images/studysync_logo.png"
+        alt="StudySync Logo"
+        class="site-logo"
+      >
+
+      <div>
+        StudySync
+        <small>STUDENT WORKSPACE</small>
+      </div>
+    </div>
+
+    <div>
+      <div class="nav-label">WORKSPACE</div>
+
+      <nav class="nav" id="nav">
+        <button class="active" data-page="Dashboard">▦ &nbsp; Dashboard</button>
+        <button data-page="My Tasks">☷ &nbsp; My Tasks</button>
+        <button data-page="Study Planner">▦ &nbsp; Study Planner</button>
+        <button data-page="Grade Analyzer">◉ &nbsp; Grade Analyzer</button>
+        <button data-page="Subjects">▤ &nbsp; Subjects</button>
+      </nav>
+    </div>
+
+    <div class="side-note">
+      <strong>MMW in action</strong>
+      Track percentages, weighted averages, ratios, and how study time is allocated.
+      All calculations run locally in this browser.
+    </div>
+
+  </aside>
+
+  <main class="main">
+
+    <section class="account-bar" aria-label="Account controls">
+      <span class="account-status" id="account-status">
+        Not signed in — your work is saved only on this device.
+      </span>
+
+      <button class="btn" id="login-btn" type="button">Log In</button>
+      <button class="btn primary" id="signup-btn" type="button">Sign Up</button>
+      <button class="btn hidden" id="logout-btn" type="button">Log Out</button>
+
+      <button class="btn" id="browser-notify-btn" type="button">
+        Enable Browser Notifications
+      </button>
+    </section>
+
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">YOUR ACADEMIC OVERVIEW</div>
+        <h1 id="welcome">Good day! 👋</h1>
+      </div>
+
+      <div class="date-pill" id="today"></div>
+    </header>
+
+    <div id="view"></div>
+
+    <div class="footer-note">
+      StudySync is a student project prototype, not an official gradebook.
+      Sign in to sync your tasks and study data across devices.
+    </div>
+
+  </main>
+</div>
+
+<div id="toast" class="message hidden" role="status"></div>
+
+</body>
+</html>
